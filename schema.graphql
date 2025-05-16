@@ -231,7 +231,7 @@ type Mutation {
   deleteOperator(
     documentId: ID!
 
-    """The locale to use for the query"""
+    """The locale to use for the query 2"""
     locale: I18NLocaleCode
   ): DeleteMutationResponse
   createReviewWorkflowsWorkflow(status: PublicationStatus = PUBLISHED, data: ReviewWorkflowsWorkflowInput!): ReviewWorkflowsWorkflow
