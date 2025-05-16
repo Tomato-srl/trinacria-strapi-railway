@@ -276,7 +276,7 @@ type Mutation {
   """Change user password. Confirm with the current password."""
   changePassword(currentPassword: String!, password: String!, passwordConfirmation: String!): UsersPermissionsLoginPayload
 
-  """Confirm an email users email address"""
+  """Confirm an email users email address2"""
   emailConfirmation(confirmation: String!): UsersPermissionsLoginPayload
 }
 
