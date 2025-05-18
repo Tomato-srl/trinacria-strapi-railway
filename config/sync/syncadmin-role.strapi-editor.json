@@ -1,0 +1,129 @@
+{
+  "documentId": "sxjhxa4qidrj48bb2aeb3wo3",
+  "name": "Editor",
+  "code": "strapi-editor",
+  "description": "Editors can manage and publish contents including those of other users.",
+  "locale": null,
+  "permissions": [
+    {
+      "documentId": "zk1mrf2r41dzergzqzppo034",
+      "action": "plugin::content-manager.explorer.create",
+      "actionParameters": {},
+      "subject": "api::operator.operator",
+      "properties": {
+        "fields": [
+          "id_operator",
+          "title",
+          "description",
+          "address",
+          "district",
+          "type",
+          "phone",
+          "email",
+          "website",
+          "location"
+        ]
+      },
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "hcgzz6nrcnjn9s7n5q4zsi84",
+      "action": "plugin::content-manager.explorer.read",
+      "actionParameters": {},
+      "subject": "api::operator.operator",
+      "properties": {
+        "fields": [
+          "id_operator",
+          "title",
+          "description",
+          "address",
+          "district",
+          "type",
+          "phone",
+          "email",
+          "website",
+          "location"
+        ]
+      },
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "m22oynfob197p469zahqpmkd",
+      "action": "plugin::content-manager.explorer.update",
+      "actionParameters": {},
+      "subject": "api::operator.operator",
+      "properties": {
+        "fields": [
+          "id_operator",
+          "title",
+          "description",
+          "address",
+          "district",
+          "type",
+          "phone",
+          "email",
+          "website",
+          "location"
+        ]
+      },
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "q7e62udd7vux05jq544hw5uk",
+      "action": "plugin::upload.assets.copy-link",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "a5xlrcffa4lp8slejnq6d8n4",
+      "action": "plugin::upload.assets.create",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "n39340q817ar9cjebom0i1tq",
+      "action": "plugin::upload.assets.download",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "pp1o9zf30x5jtv5xfp4ygumo",
+      "action": "plugin::upload.assets.update",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "j2b45za9zgxapjmwix1wdhyl",
+      "action": "plugin::upload.configure-view",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "locale": null
+    },
+    {
+      "documentId": "t6tnl4imny6vqopcpgkg6y27",
+      "action": "plugin::upload.read",
+      "actionParameters": {},
+      "subject": null,
+      "properties": {},
+      "conditions": [],
+      "locale": null
+    }
+  ]
+}
