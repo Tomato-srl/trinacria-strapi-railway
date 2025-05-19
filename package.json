@@ -15,13 +15,14 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@strapi/provider-upload-local": "5.11.0",
     "@strapi/plugin-users-permissions": "5.11.0",
+    "@strapi/provider-upload-local": "5.11.0",
     "@strapi/strapi": "5.11.0",
     "pg": "8.8.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
+    "strapi-geodata": "^0.1.2",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {},
