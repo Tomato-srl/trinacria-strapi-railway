@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "operators",
+  "info": {
+    "singularName": "operator",
+    "pluralName": "operators",
+    "displayName": "Operator",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "district": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "location": {
+      "type": "customField",
+      "options": {
+        "info": true
+      },
+      "customField": "plugin::geodata.geojson"
+    },
+    "email": {
+      "type": "email"
+    },
+    "website": {
+      "type": "string"
+    },
+    "id_operator": {
+      "type": "uid"
+    }
+  }
+}
