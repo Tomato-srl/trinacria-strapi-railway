@@ -4,7 +4,8 @@
   "info": {
     "singularName": "operator",
     "pluralName": "operators",
-    "displayName": "Operator"
+    "displayName": "Operator",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -40,6 +41,9 @@
     },
     "website": {
       "type": "string"
+    },
+    "id_operator": {
+      "type": "uid"
     }
   }
 }

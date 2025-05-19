@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiOperatorOperator extends Struct.CollectionTypeSchema {
   collectionName: 'operators';
   info: {
+    description: '';
     displayName: 'Operator';
     pluralName: 'operators';
     singularName: 'operator';
@@ -387,6 +388,7 @@ export interface ApiOperatorOperator extends Struct.CollectionTypeSchema {
     description: Schema.Attribute.String;
     district: Schema.Attribute.String;
     email: Schema.Attribute.Email;
+    id_operator: Schema.Attribute.UID;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
