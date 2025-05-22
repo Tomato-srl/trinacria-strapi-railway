@@ -13,4 +13,9 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  i18n: {
+    enabled: true,
+    defaultLocale: 'it',
+    locales: ['it', 'en'],
+  },
 });

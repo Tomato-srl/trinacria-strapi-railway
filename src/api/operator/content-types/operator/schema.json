@@ -8,26 +8,50 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
   },
   "attributes": {
+    "id_operator": {
+      "type": "uid",
+      "required": true
+    },
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "description": {
-      "type": "string"
+      "type": "text",
+      "required": true
     },
     "address": {
-      "type": "string"
+      "type": "text",
+      "required": true
     },
     "district": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "type": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "phone": {
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "website": {
+      "type": "string",
+      "required": true
     },
     "location": {
       "type": "customField",
@@ -35,15 +59,6 @@
         "info": true
       },
       "customField": "plugin::geodata.geojson"
-    },
-    "email": {
-      "type": "email"
-    },
-    "website": {
-      "type": "string"
-    },
-    "id_operator": {
-      "type": "uid"
     }
   }
 }

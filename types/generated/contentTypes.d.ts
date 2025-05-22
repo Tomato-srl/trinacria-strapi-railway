@@ -378,23 +378,27 @@ export interface ApiOperatorOperator extends Struct.CollectionTypeSchema {
     singularName: 'operator';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
-    address: Schema.Attribute.String;
+    address: Schema.Attribute.Text & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.String;
-    district: Schema.Attribute.String;
-    email: Schema.Attribute.Email;
-    id_operator: Schema.Attribute.UID;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    district: Schema.Attribute.String & Schema.Attribute.Required;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    id_operator: Schema.Attribute.UID & Schema.Attribute.Required;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::operator.operator'
-    > &
-      Schema.Attribute.Private;
+    >;
     location: Schema.Attribute.JSON &
       Schema.Attribute.CustomField<
         'plugin::geodata.geojson',
@@ -402,14 +406,16 @@ export interface ApiOperatorOperator extends Struct.CollectionTypeSchema {
           info: true;
         }
       >;
-    phone: Schema.Attribute.String;
+    phone: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    type: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    type: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    website: Schema.Attribute.String;
+    website: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
