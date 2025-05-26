@@ -35,3 +35,18 @@ When developing locally this Strapi template will connect to the Postgres server
 
 - After your app is deployed, visit the `/admin` endpoint to create your admin user.
 - If you want to use npm with this project make sure you delete the `yarn.lock` file after you have ran `npm install`
+
+## Railway link
+```
+yarn global add @railway/cli
+railway login
+railway link
+railway run yarn develop
+```
+
+# Build schema.graphql
+```
+get-graphql-schema http://localhost:1337/graphql > schema.graphql
+```
+## Troubleshooting
+Visit http://localhost:1337/graphql before launching `schema.graphql` command.
