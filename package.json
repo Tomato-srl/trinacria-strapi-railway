@@ -25,7 +25,7 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "strapi-geodata": "^0.1.2",
-    "styled-components": "^6.0.0"
+    "styled-components": "^6.1.18"
   },
   "devDependencies": {},
   "engines": {
