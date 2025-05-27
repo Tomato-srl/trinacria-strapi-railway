@@ -1,3 +1,5 @@
+import it from './it.json';
+
 const config = {
   locales: [
     // 'ar',
@@ -27,6 +29,9 @@ const config = {
     // 'zh-Hans',
     // 'zh',
   ],
+  translations: {
+    it: it,
+  },
 };
 
 const bootstrap = (app) => {
