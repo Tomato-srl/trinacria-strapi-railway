@@ -46,7 +46,7 @@ railway run yarn develop
 
 # Build schema.graphql
 ```
-get-graphql-schema http://localhost:1337/graphql > schema.graphql
+get-graphql-schema http://localhost:1337/graphql > ../schema.graphql
 ```
 ## Troubleshooting
 Visit http://localhost:1337/graphql before launching `schema.graphql` command.

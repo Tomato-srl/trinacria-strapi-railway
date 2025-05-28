@@ -8,6 +8,6 @@ module.exports = ({ env }) => ({
   // Configurazione dei content-types da sincronizzare
   syncContentTypes: [
     // Esempio: { type: 'api::article.article', fields: ['title', 'content'] }
-    { type: 'api::operator.operator', fields: ['title', 'description', 'address', 'district', 'type', 'phone', 'email', 'website', 'location'] }
+    { type: 'api::poi.poi', fields: ['title', 'description', 'address', 'type', 'location', 'phone', 'email', 'website', 'facebook', 'instagram', 'token', 'wallet_address'] }
   ],
 }); 
