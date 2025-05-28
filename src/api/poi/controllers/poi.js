@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * operator controller
+ * poi controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::operator.operator');
+module.exports = createCoreController('api::poi.poi');

@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * operator service
+ * poi service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::operator.operator');
+module.exports = createCoreService('api::poi.poi');

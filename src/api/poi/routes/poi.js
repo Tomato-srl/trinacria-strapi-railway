@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * operator router
+ * poi router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::operator.operator');
+module.exports = createCoreRouter('api::poi.poi');
