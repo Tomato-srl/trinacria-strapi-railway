@@ -4,7 +4,8 @@
   "info": {
     "singularName": "poi",
     "pluralName": "pois",
-    "displayName": "Punti di Interesse"
+    "displayName": "Punti di Interesse",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -41,13 +42,16 @@
       "type": "email"
     },
     "website": {
-      "type": "string"
+      "type": "string",
+      "regex": "[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&\\/\\/=]*)"
     },
     "facebook": {
-      "type": "string"
+      "type": "string",
+      "regex": "[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&\\/\\/=]*)"
     },
     "instagram": {
-      "type": "string"
+      "type": "string",
+      "regex": "[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&\\/\\/=]*)"
     },
     "token": {
       "type": "boolean",
