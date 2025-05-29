@@ -376,6 +376,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiPoiPoi extends Struct.CollectionTypeSchema {
   collectionName: 'pois';
   info: {
+    description: '';
     displayName: 'Punti di Interesse';
     pluralName: 'pois';
     singularName: 'poi';
