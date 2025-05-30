@@ -101,17 +101,20 @@ async function syncPOIWithOpenAI(poi) {
     // We're only including fields that are relevant for the assistant
     const poiData = {
       id: poi.id,
-      id_poi: poi.id_poi,
+      documentId: poi.documentId,
       title: poi.title,
       description: poi.description,
       address: poi.address,
-      district: poi.district,
       type: poi.type,
+      location: poi.location,
       phone: poi.phone,
       email: poi.email,
       website: poi.website,
+      facebook: poi.facebook,
+      instagram: poi.instagram,
+      token: poi.token,
+      wallet_address: poi.wallet_address,
       // Format location data if needed
-      location: poi.location,
     };
     console.log('syncPOIWithOpenAI 8');
     console.log(`Syncing poi ${poi.id} with OpenAI Assistant...`);
