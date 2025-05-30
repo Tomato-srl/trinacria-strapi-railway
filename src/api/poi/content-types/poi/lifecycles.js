@@ -24,9 +24,9 @@ async function deletePOIFromOpenAI(poi) {
     }
     
     // Prepare the filename pattern we're looking for
-    const filename = `poi_${poi.id}.json`;
+    const filename = `poi_${poi.documentId}.json`;
     
-    console.log(`Looking for file to delete for poi ${poi.id}...`);
+    console.log(`Looking for file to delete for poi ${poi.documentId}...`);
     
     // Get all files associated with the assistant
     const assistantFiles = await openaiService.listAssistantFiles(config.assistantId);
@@ -38,10 +38,10 @@ async function deletePOIFromOpenAI(poi) {
         const fileInfo = await openaiService.retrieveFile(file.id);
         if (fileInfo.filename === filename) {
           // If we find the file, delete it
-          console.log(`Removing file for deleted poi ${poi.id}...`);
+          console.log(`Removing file for deleted poi ${poi.documentId}...`);
           await openaiService.removeFileFromAssistant(config.assistantId, file.id);
           await openaiService.deleteFile(file.id);
-          console.log(`Successfully removed file for deleted poi ${poi.id}`);
+          console.log(`Successfully removed file for deleted poi ${poi.documentId}`);
           break;
         }
       }
@@ -77,7 +77,7 @@ async function syncPOIWithOpenAI(poi) {
     }
     console.log('syncPOIWithOpenAI 4');
     // Prepare the filename pattern we're looking for
-    const filename = `poi_${poi.id}.json`;
+    const filename = `poi_${poi.documentId}.json`;
     console.log('syncPOIWithOpenAI 5');
     // Get all files associated with the assistant
     const assistantFiles = await openaiService.listAssistantFiles(config.assistantId);
@@ -89,7 +89,7 @@ async function syncPOIWithOpenAI(poi) {
         const fileInfo = await openaiService.retrieveFile(file.id);
         if (fileInfo.filename === filename) {
           // If we find the file, delete it
-          console.log(`Removing existing file for poi ${poi.id}...`);
+          console.log(`Removing existing file for poi ${poi.documentId}...`);
           await openaiService.removeFileFromAssistant(config.assistantId, file.id);
           await openaiService.deleteFile(file.id);
           break;
@@ -117,7 +117,7 @@ async function syncPOIWithOpenAI(poi) {
       // Format location data if needed
     };
     console.log('syncPOIWithOpenAI 8');
-    console.log(`Syncing poi ${poi.id} with OpenAI Assistant...`);
+    console.log(`Syncing poi ${poi.documentId} with OpenAI Assistant...`);
     
     // Upload content to OpenAI and attach it to the assistant
     const fileResponse = await openaiService.uploadContentAsFile(
@@ -127,7 +127,7 @@ async function syncPOIWithOpenAI(poi) {
     );
     console.log('syncPOIWithOpenAI 9');
     // Log success to console instead of using content-type
-    console.log(`Successfully synced poi ${poi.id} with OpenAI Assistant. File ID: ${fileResponse.id}`);
+    console.log(`Successfully synced poi ${poi.documentId} with OpenAI Assistant. File ID: ${fileResponse.id}`);
     console.log('syncPOIWithOpenAI 10');
   } catch (error) {
     console.error('Error syncing poi with OpenAI:', error.message || 'Unknown error');
@@ -138,7 +138,7 @@ module.exports = {
   afterCreate(event) {
     const { result, params } = event;
     console.log('POI afterCreate hook triggered');
-    console.log('Created poi ID:', result.id);
+    console.log('Created poi documentId:', result.documentId);
     console.log('Created poi data:', result);
     
     // Call OpenAI API to sync the poi
@@ -148,7 +148,7 @@ module.exports = {
   afterUpdate(event) {
     const { result, params } = event;
     console.log('POI afterUpdate hook triggered');
-    console.log('Updated poi ID:', result.id);
+    console.log('Updated poi documentId:', result.documentId);
     console.log('Updated poi data:', result);
     
     // Call OpenAI API to sync the updated poi
@@ -158,7 +158,7 @@ module.exports = {
   afterDelete(event) {
     const { result, params } = event;
     console.log('POI afterDelete hook triggered');
-    console.log('Deleted poi ID:', result.id);
+    console.log('Deleted poi documentId:', result.documentId);
     console.log('Deleted poi data:', result);
     
     // Call OpenAI API to remove poi data
