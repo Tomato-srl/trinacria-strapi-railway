@@ -4,10 +4,11 @@
   "info": {
     "singularName": "wallet-user",
     "pluralName": "wallet-users",
-    "displayName": "Wallet user"
+    "displayName": "Wallet user",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "attributes": {
     "wallet": {
