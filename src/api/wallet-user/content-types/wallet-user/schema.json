@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wallet_users",
+  "info": {
+    "singularName": "wallet-user",
+    "pluralName": "wallet-users",
+    "displayName": "Wallet user"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "wallet": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "surname": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    }
+  }
+}
