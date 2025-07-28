@@ -101,7 +101,7 @@ input FloatFilterInput {
   between: [Float]
 }
 
-union GenericMorph = Poi | UploadFile | I18NLocale | ReviewWorkflowsWorkflow | ReviewWorkflowsWorkflowStage | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+union GenericMorph = Poi | WalletUser | UploadFile | I18NLocale | ReviewWorkflowsWorkflow | ReviewWorkflowsWorkflowStage | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
 
 type I18NLocale {
   documentId: ID!
@@ -213,6 +213,9 @@ type Mutation {
   createPoi(status: PublicationStatus = PUBLISHED, data: PoiInput!): Poi
   updatePoi(documentId: ID!, status: PublicationStatus = PUBLISHED, data: PoiInput!): Poi
   deletePoi(documentId: ID!): DeleteMutationResponse
+  createWalletUser(status: PublicationStatus = PUBLISHED, data: WalletUserInput!): WalletUser
+  updateWalletUser(documentId: ID!, status: PublicationStatus = PUBLISHED, data: WalletUserInput!): WalletUser
+  deleteWalletUser(documentId: ID!): DeleteMutationResponse
   createReviewWorkflowsWorkflow(status: PublicationStatus = PUBLISHED, data: ReviewWorkflowsWorkflowInput!): ReviewWorkflowsWorkflow
   updateReviewWorkflowsWorkflow(documentId: ID!, status: PublicationStatus = PUBLISHED, data: ReviewWorkflowsWorkflowInput!): ReviewWorkflowsWorkflow
   deleteReviewWorkflowsWorkflow(documentId: ID!): DeleteMutationResponse
@@ -344,6 +347,9 @@ type Query {
   poi(documentId: ID!, status: PublicationStatus = PUBLISHED): Poi
   pois_connection(filters: PoiFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], status: PublicationStatus = PUBLISHED): PoiEntityResponseCollection
   pois(filters: PoiFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], status: PublicationStatus = PUBLISHED): [Poi]!
+  walletUser(documentId: ID!, status: PublicationStatus = PUBLISHED): WalletUser
+  walletUsers_connection(filters: WalletUserFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], status: PublicationStatus = PUBLISHED): WalletUserEntityResponseCollection
+  walletUsers(filters: WalletUserFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], status: PublicationStatus = PUBLISHED): [WalletUser]!
   uploadFile(documentId: ID!, status: PublicationStatus = PUBLISHED): UploadFile
   uploadFiles_connection(filters: UploadFileFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], status: PublicationStatus = PUBLISHED): UploadFileEntityResponseCollection
   uploadFiles(filters: UploadFileFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], status: PublicationStatus = PUBLISHED): [UploadFile]!
@@ -690,3 +696,40 @@ type UsersPermissionsUserRelationResponseCollection {
   nodes: [UsersPermissionsUser!]!
 }
 
+type WalletUser {
+  documentId: ID!
+  wallet: String!
+  name: String!
+  surname: String!
+  email: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  publishedAt: DateTime
+}
+
+type WalletUserEntityResponseCollection {
+  nodes: [WalletUser!]!
+  pageInfo: Pagination!
+}
+
+input WalletUserFiltersInput {
+  documentId: IDFilterInput
+  wallet: StringFilterInput
+  name: StringFilterInput
+  surname: StringFilterInput
+  email: StringFilterInput
+  createdAt: DateTimeFilterInput
+  updatedAt: DateTimeFilterInput
+  publishedAt: DateTimeFilterInput
+  and: [WalletUserFiltersInput]
+  or: [WalletUserFiltersInput]
+  not: WalletUserFiltersInput
+}
+
+input WalletUserInput {
+  wallet: String
+  name: String
+  surname: String
+  email: String
+  publishedAt: DateTime
+}
