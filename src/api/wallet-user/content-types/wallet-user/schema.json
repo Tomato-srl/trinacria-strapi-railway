@@ -28,6 +28,11 @@
       "type": "email",
       "required": true,
       "unique": true
+    },
+    "privacyAccepted": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

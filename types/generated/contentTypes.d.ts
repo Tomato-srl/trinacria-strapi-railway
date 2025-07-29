@@ -423,12 +423,13 @@ export interface ApiPoiPoi extends Struct.CollectionTypeSchema {
 export interface ApiWalletUserWalletUser extends Struct.CollectionTypeSchema {
   collectionName: 'wallet_users';
   info: {
+    description: '';
     displayName: 'Wallet user';
     pluralName: 'wallet-users';
     singularName: 'wallet-user';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -444,6 +445,9 @@ export interface ApiWalletUserWalletUser extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    privacyAccepted: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     publishedAt: Schema.Attribute.DateTime;
     surname: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
