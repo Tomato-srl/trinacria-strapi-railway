@@ -702,6 +702,8 @@ type WalletUser {
   name: String!
   surname: String!
   email: String!
+  privacyAccepted: Boolean!
+  badge: String!
   createdAt: DateTime
   updatedAt: DateTime
   publishedAt: DateTime
@@ -718,6 +720,8 @@ input WalletUserFiltersInput {
   name: StringFilterInput
   surname: StringFilterInput
   email: StringFilterInput
+  privacyAccepted: BooleanFilterInput
+  badge: StringFilterInput
   createdAt: DateTimeFilterInput
   updatedAt: DateTimeFilterInput
   publishedAt: DateTimeFilterInput
@@ -731,5 +735,7 @@ input WalletUserInput {
   name: String
   surname: String
   email: String
+  privacyAccepted: Boolean
+  badge: String
   publishedAt: DateTime
 }
