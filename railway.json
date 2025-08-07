@@ -1,6 +1,6 @@
 {
     "$schema": "https://backboard.railway.app/railway.schema.json",
     "build": {
-        "builder": "docker-image://ghcr.io/railwayapp/railpack-frontend:v0.2.1@sha256:46c992da3e89c3dd327506efd3b7fbe9507bb63d7343d00fd45ce23f1e8a532b"
+        "builder": "NIXPACKS"
     }
 }
